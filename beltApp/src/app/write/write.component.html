@@ -1,0 +1,32 @@
+<div id="wapper">
+	<h4>Write a review to {{ restaurant.restaurant_name }} : </h4>
+	<form>
+        <label>Your Name: </label><br>
+          
+        <input type="text" name="reviews.user_name" [(ngModel)]= "reviews.user_name">
+        <br>
+
+        <label for="stars">Stars :</label>
+		<select name="stars" [(ngModel)]= "reviews.stars"><br>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+        <br>
+        <label>Your review:</label><br>
+        <input type="text" name="reviews.review" [(ngModel)]= "reviews.review">
+		<br>
+        <button type="submit" (click)="addReviewThroughService()">Register</button>
+        <button [routerLink] = "['']" >Cancel</button>
+	</form>
+		
+	{{ reviews | json }}
+
+	<div *ngIf="errors" id="error_message">
+		<p>{{ errors }}</p>
+	
+	</div>
+</div>
+

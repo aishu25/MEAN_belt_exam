@@ -1,0 +1,25 @@
+<div id="wapper">
+	<h3>Reviews for {{ restaurant.restaurant_name }}: </h3>
+	<button [routerLink]="['/write', restaurant._id]">New Review</button>
+	<button [routerLink] = "['']" >Cancel</button> 
+	<table>
+			<thead>
+				<tr>
+					<td>User Name</td>
+					<td>Stars</td>
+					<td>Description</td>
+				</tr>
+			</thead>
+			<tbody *ngFor="let review of reviews">
+				<tr>
+					<td>{{ review.user_name }}</td>
+					<td>{{ review.stars}}</td>
+					<td>{{ review.review }}</td>
+				</tr>
+			</tbody>
+	</table>
+	
+	<div *ngIf="errors" id="error_message">
+		<p>{{ errors }}</p>
+	</div>
+</div>	

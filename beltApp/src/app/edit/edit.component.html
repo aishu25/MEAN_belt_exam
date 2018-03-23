@@ -1,0 +1,22 @@
+<div id="wapper">
+<form>
+<label>Restaurant Name: </label><br>
+<input type="text" name="restaurant.restaurant_name" [(ngModel)]= "restaurant.restaurant_name" *ngIf="restaurant">
+<br>
+
+<label>Cuisine type: </label><br>
+<input type="text" name="restaurant.cuisine_name" [(ngModel)]= "restaurant.cuisine_name" *ngIf="restaurant">
+	<br>
+<button type="submit" (click)="updateOneRestaurantThroughService()">Edit</button>
+<button [routerLink] = "['']" >Cancel</button>
+</form>
+
+        <div *ngIf="errors" id="error_message">
+                <div *ngIf="errors.errors.restaurant_name">
+                        <p>{{ errors.errors.restaurant_name.message }}</p>
+                </div>
+                <div *ngIf="errors.errors.cuisine_name">
+                        <p>{{ errors.errors.cuisine_name.message }}</p>
+                </div>
+        </div>
+</div>

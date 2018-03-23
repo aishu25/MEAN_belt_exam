@@ -1,0 +1,28 @@
+#wapper{
+    border: 1px black solid;
+    font-family: Comic Sans MS, Helvetica, sans-serif;
+    padding: 10px;
+    margin: 10px;
+}
+table, td{
+  border: 1px solid black;
+  border-collapse: collapse; 
+  padding: 8px;
+}
+
+button {
+    background-color: #800040;
+    color: white;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 10px;
+}
+a, input {
+  margin: 10px;
+}
+
+#error_message {
+  color: red;
+}

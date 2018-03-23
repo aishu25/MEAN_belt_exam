@@ -1,0 +1,25 @@
+<div id="wapper">
+	<button [routerLink]="['new']">New Restaurant</button>
+	<table>
+		<thead>
+			<tr>
+				<td>Restuarant ID</td>
+				<td>Restuarant Name</td>
+				<td>Cuisine</td>
+				<td>Actions Available</td>
+			</tr>
+		</thead>
+		<tbody *ngFor="let restaurant of restaurants">
+			<tr>
+				<td>{{ restaurant._id }}</td>
+				<td>{{ restaurant.restaurant_name }}</td>
+				<td>{{ restaurant.cuisine_name }}</td>
+				<td>
+					<button (click)="showReviewsId(restaurant._id)">Read reviews</button> 
+	      			<button (click)="showRestaurantId(restaurant._id)">Update</button>
+	      			<button (click)="deleteRestaurantThroughService(restaurant._id)">Delete</button>
+      			</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
