@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewComponent implements OnInit {
   
+  id: any;
   restaurant: any;
   errors: any;
 
@@ -19,13 +20,16 @@ export class NewComponent implements OnInit {
 
   ngOnInit() {
   	this.restaurant = { restaurant_name: "" }
+    this._route.params.subscribe( params => {
+      this.id = params['id'];
+      console.log(" id : ", this.id);
+    });
   }
   
   addRestaurantThroughService(){
   	console.log("hits component")
   	let obs = this._httpService.addRestaurant(this.restaurant);
 	  obs.subscribe(data => {
-		console.log(data)
 		if(data["message"] === "errors"){
 			this.errors = data["errors"]
 		}

@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, "/beltApp/dist")));
 
 app.set("views", path.join(__dirname, "./views"));
 
-mongoose.connect("mongodb://localhost/restaurant");
+mongoose.connect("mongodb://localhost/eat_restaurant");
 mongoose.Promise = global.Promise;
 
 
